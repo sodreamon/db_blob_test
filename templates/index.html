@@ -1,0 +1,11 @@
+<div>
+    <form method="post" action="{{url_for('home')}}" enctype='multipart/form-data'>
+        <input type="file" name="image"/>
+        <input type="submit"/>
+    </form>
+</div>
+{% for image in images %}
+<div>
+    <img src="{{url_for('image_url', image_title=image.title)}}" width="500px" height="500px">
+</div>
+{% endfor %}
